@@ -1,7 +1,8 @@
-import { useState } from "react"
-import Login from "./login.jsx"
-import Chat from "./Chat.jsx"
 
+
+import { useState } from "react"
+import Login from "./Login.jsx";
+import Chat from "./Chat.jsx"
 
 function App() {
   const [user, setUser] = useState(null)
@@ -9,9 +10,9 @@ function App() {
   return (
     <div>
       {!user ? (
-        <Login onLogin={(username) => setUser(username)} />
+        <Login onLogin={(userData) => setUser(userData)} />  // userData = {username, profilePic, color}
       ) : (
-        <Chat username={user} />
+        <Chat user={user} />  // pass the whole object
       )}
     </div>
   )
